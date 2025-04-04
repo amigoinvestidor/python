@@ -2,13 +2,19 @@ import datetime
 
 def AnbimaDates(DDMMAAAA):
     """
-    Retorna o dia útil anterior à data informada (DDMMAAAA), excluindo sábados, domingos e feriados.
+    Retorna o dia útil anterior à data fornecida, ignorando feriados e finais de semana.
+
+    Parâmetros:
+    - DDMMAAAA (str): Data no formato 'DDMMAAAA'
+
+    Retorno:
+    - str: Data do dia útil anterior no mesmo formato 'DDMMAAAA'
 
     Exemplo:
-        >>> from anbima import AnbimaDates
-        >>> AnbimaDates("01012025")
-        '31122024'
+    >>> AnbimaDates("04042025")
+    '04042025'
     """
+
     dt = datetime.datetime.strptime(DDMMAAAA, "%d%m%Y").date()
     y = dt.year
 
